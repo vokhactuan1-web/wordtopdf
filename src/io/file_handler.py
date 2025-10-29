@@ -120,38 +120,54 @@ class FileHandler:
             logger.error(f"Không thể mở thư mục: {e}")
     
     @staticmethod
-    def get_downloads_folder() -> Path:
+    def open_file(file_path: Path):
         """
-        Lấy đường dẫn thư mục Downloads
+        Mở file với ứng dụng mặc định (auto_open_output = true trong config)
         
-        Returns:
-            Path: Đường dẫn Downloads folder
+        Args:
+            file_path: Đường dẫn file
         """
-        home = Path.home()
-        downloads = home / "Downloads"
+        if not file_path.exists():
+            logger.error(f"File không tồn tại: {file_path}")
+            return
         
-        if not downloads.exists():
-            downloads.mkdir(exist_ok=True)
-            logger.info(f"Đã tạo thư mục Downloads: {downloads}")
-        
-        return downloads
+        try:
+            system = platform.system()
+            
+            if system == "Windows":
+                os.startfile(file_path)
+            elif system == "Darwin":  # macOS
+                subprocess.run(["open", str(file_path)])
+            else:  # Linux
+                subprocess.run(["xdg-open", str(file_path)])
+            
+            logger.info(f"Đã mở file: {file_path.name}")
+        except Exception as e:
+            logger.error(f"Không thể mở file: {e}")
     
     @staticmethod
     def ensure_output_path(output_path: Optional[Path], input_path: Path, 
+                          output_folder: Optional[Path] = None,
                           new_suffix: str = '.pdf') -> Path:
         """
-        Đảm bảo output path hợp lệ, tạo từ input nếu không có
+        Đảm bảo output path hợp lệ
         
         Args:
             output_path: Đường dẫn output (có thể None)
             input_path: Đường dẫn input
+            output_folder: Thư mục output từ config (có thể None)
             new_suffix: Suffix mới cho file output
             
         Returns:
             Path: Đường dẫn output hợp lệ
         """
         if output_path is None:
-            output_path = input_path.with_suffix(new_suffix)
+            # Nếu có output_folder từ config, dùng nó
+            if output_folder:
+                output_path = output_folder / input_path.with_suffix(new_suffix).name
+            else:
+                # Không có config, tạo cùng thư mục với file gốc
+                output_path = input_path.with_suffix(new_suffix)
         
         # Tạo thư mục parent nếu chưa có
         output_path.parent.mkdir(parents=True, exist_ok=True)
@@ -182,3 +198,22 @@ class FileHandler:
             filename = name + ext
         
         return filename
+    
+    @staticmethod
+    def get_downloads_folder() -> Path:
+        """
+        Lấy đường dẫn thư mục Downloads của người dùng
+        
+        Returns:
+            Path: Đường dẫn thư mục Downloads
+        """
+        home = Path.home()
+        downloads = home / "Downloads"
+        
+        # Kiểm tra nếu tồn tại
+        if downloads.exists():
+            return downloads
+        
+        # Fallback về home directory
+        logger.warning(f"Thư mục Downloads không tồn tại, dùng {home}")
+        return home

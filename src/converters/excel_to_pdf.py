@@ -184,10 +184,8 @@ class ExcelToPDFConverter:
         row_count = 0
         
         # Thu thập dữ liệu
+        # max_excel_rows = 0 trong config = không giới hạn
         for row_idx, row in enumerate(ws.iter_rows(values_only=True)):
-            if row_idx > 500:  # Giới hạn
-                logger.warning("Giới hạn 500 dòng đầu tiên")
-                break
             
             row_data = []
             for cell in row:

@@ -1,0 +1,68 @@
+2025-10-29 11:43:23 - word_converter - INFO - Khởi động Word to PDF Converter
+2025-10-29 11:43:23 - src.interface.tkinter_ui - INFO - Valid extensions: ['.docx', '.doc']
+2025-10-29 11:43:24 - src.interface.tkinter_ui - INFO - Drag & drop đã được kích hoạt
+2025-10-29 11:43:24 - src.interface.tkinter_ui - INFO - ============================================================
+2025-10-29 11:43:24 - src.interface.tkinter_ui - INFO - 📊 WORD TO PDF CONVERTER
+2025-10-29 11:43:24 - src.interface.tkinter_ui - INFO - ============================================================
+2025-10-29 11:43:24 - src.interface.tkinter_ui - INFO - 
+2025-10-29 11:43:24 - src.interface.tkinter_ui - INFO - 🚀 Sẵn sàng chuyển đổi!
+2025-10-29 11:43:24 - src.interface.tkinter_ui - INFO - ============================================================
+2025-10-29 11:43:24 - src.interface.tkinter_ui - INFO - 
+2025-10-29 11:43:24 - word_converter - INFO - Ứng dụng đã sẵn sàng
+2025-10-29 11:43:33 - src.interface.tkinter_ui - INFO - ➕ test.docx
+2025-10-29 11:43:34 - src.interface.tkinter_ui - INFO - 
+============================================================
+2025-10-29 11:43:34 - src.interface.tkinter_ui - INFO - 🚀 BẮT ĐẦU CHUYỂN ĐỔI 1 FILE
+2025-10-29 11:43:34 - src.interface.tkinter_ui - INFO - 📁 Lưu vào: C:\Users\vokha\Downloads\wordtopdf
+2025-10-29 11:43:34 - src.interface.tkinter_ui - INFO - ============================================================
+
+2025-10-29 11:43:34 - src.interface.tkinter_ui - INFO - ⏳ Đang xử lý: test.docx
+2025-10-29 11:43:34 - src.converters.excel_to_pdf - INFO - Tìm thấy font: C:\Windows\Fonts\arial.ttf
+2025-10-29 11:43:34 - src.converters.excel_to_pdf - INFO - Đã đăng ký font Unicode
+2025-10-29 11:43:34 - src.converters.word_to_pdf - INFO - Đang đọc Word: test.docx
+2025-10-29 11:43:34 - src.converters.word_to_pdf - INFO - Đã xử lý 166 elements
+2025-10-29 11:43:34 - src.converters.word_to_pdf - INFO - Đang tạo PDF...
+2025-10-29 11:43:34 - src.converters.word_to_pdf - INFO - Đã tạo PDF: C:\Users\vokha\Downloads\wordtopdf\test.pdf
+2025-10-29 11:43:34 - src.interface.tkinter_ui - INFO -    ✅ → test.pdf
+
+2025-10-29 11:43:34 - src.interface.tkinter_ui - INFO - ============================================================
+2025-10-29 11:43:34 - src.interface.tkinter_ui - INFO - 🎉 KẾT QUẢ: ✅ 1 | ❌ 0
+2025-10-29 11:43:34 - src.interface.tkinter_ui - INFO - ============================================================
+
+2025-10-29 11:43:34 - src.interface.tkinter_ui - INFO - 📂 Đang mở file: test.pdf
+2025-10-29 11:43:34 - src.io.file_handler - INFO - Đã mở file: test.pdf
+2025-10-29 11:44:17 - excel_converter - INFO - Khởi động Excel to PDF Converter
+2025-10-29 11:44:18 - src.interface.tkinter_ui - INFO - Valid extensions: ['.xlsx', '.xls']
+2025-10-29 11:44:18 - src.interface.tkinter_ui - INFO - Drag & drop đã được kích hoạt
+2025-10-29 11:44:18 - src.interface.tkinter_ui - INFO - ============================================================
+2025-10-29 11:44:18 - src.interface.tkinter_ui - INFO - 📊 EXCEL TO PDF CONVERTER
+2025-10-29 11:44:18 - src.interface.tkinter_ui - INFO - ============================================================
+2025-10-29 11:44:18 - src.interface.tkinter_ui - INFO - 
+2025-10-29 11:44:18 - src.interface.tkinter_ui - INFO - 🚀 Sẵn sàng chuyển đổi!
+2025-10-29 11:44:18 - src.interface.tkinter_ui - INFO - ============================================================
+2025-10-29 11:44:18 - src.interface.tkinter_ui - INFO - 
+2025-10-29 11:44:18 - excel_converter - INFO - Ứng dụng đã sẵn sàng
+2025-10-29 11:44:24 - src.interface.tkinter_ui - INFO - ➕ DANH SACH ĐANG KI THI HSG 10-11.xlsx
+2025-10-29 11:44:26 - src.interface.tkinter_ui - INFO - 
+============================================================
+2025-10-29 11:44:26 - src.interface.tkinter_ui - INFO - 🚀 BẮT ĐẦU CHUYỂN ĐỔI 1 FILE
+2025-10-29 11:44:26 - src.interface.tkinter_ui - INFO - 📁 Lưu vào: C:\Users\vokha\Downloads\wordtopdf
+2025-10-29 11:44:26 - src.interface.tkinter_ui - INFO - ============================================================
+
+2025-10-29 11:44:26 - src.interface.tkinter_ui - INFO - ⏳ Đang xử lý: DANH SACH ĐANG KI THI HSG 10-11.xlsx
+2025-10-29 11:44:26 - src.converters.excel_to_pdf - INFO - Tìm thấy font: C:\Windows\Fonts\arial.ttf
+2025-10-29 11:44:26 - src.converters.excel_to_pdf - INFO - Đã đăng ký font Unicode
+2025-10-29 11:44:26 - src.converters.excel_to_pdf - INFO - Đang đọc Excel: DANH SACH ĐANG KI THI HSG 10-11.xlsx
+2025-10-29 11:44:26 - src.converters.excel_to_pdf - INFO - Tìm thấy 1 sheet(s)
+2025-10-29 11:44:26 - src.converters.excel_to_pdf - INFO - Xử lý sheet 1/1: 11
+2025-10-29 11:44:26 - src.converters.excel_to_pdf - INFO -   → 28 dòng, 8 cột
+2025-10-29 11:44:26 - src.converters.excel_to_pdf - INFO - Đang tạo PDF...
+2025-10-29 11:44:26 - src.converters.excel_to_pdf - INFO - Đã tạo PDF: C:\Users\vokha\Downloads\wordtopdf\DANH SACH ĐANG KI THI HSG 10-11.pdf
+2025-10-29 11:44:26 - src.interface.tkinter_ui - INFO -    ✅ → DANH SACH ĐANG KI THI HSG 10-11.pdf
+
+2025-10-29 11:44:26 - src.interface.tkinter_ui - INFO - ============================================================
+2025-10-29 11:44:26 - src.interface.tkinter_ui - INFO - 🎉 KẾT QUẢ: ✅ 1 | ❌ 0
+2025-10-29 11:44:26 - src.interface.tkinter_ui - INFO - ============================================================
+
+2025-10-29 11:44:26 - src.interface.tkinter_ui - INFO - 📂 Đang mở file: DANH SACH ĐANG KI THI HSG 10-11.pdf
+2025-10-29 11:44:26 - src.io.file_handler - INFO - Đã mở file: DANH SACH ĐANG KI THI HSG 10-11.pdf

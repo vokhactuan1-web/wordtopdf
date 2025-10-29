@@ -285,21 +285,28 @@ class ConverterUI:
     def _convert_thread(self):
         """Thread chuyển đổi"""
         success = error = 0
+        last_file = None  # Lưu file cuối cùng để mở (auto_open_output = true trong config)
+        
+        # Thư mục lưu PDF mặc định = thư mục wordtopdf (thư mục project)
+        output_folder = Path(__file__).parent.parent.parent  # src/interface -> src -> wordtopdf
         
         self.log("\n" + "=" * 60)
         self.log(f"🚀 BẮT ĐẦU CHUYỂN ĐỔI {len(self.file_list)} FILE")
+        self.log(f"📁 Lưu vào: {output_folder}")
         self.log("=" * 60 + "\n")
         
         for file_path in self.file_list:
             try:
                 self.log(f"⏳ Đang xử lý: {file_path.name}")
-                output = file_path.with_suffix('.pdf')
+                # Lưu PDF vào thư mục wordtopdf thay vì cùng thư mục file gốc
+                output = output_folder / file_path.with_suffix('.pdf').name
                 
                 # Gọi hàm converter
                 result = self.converter_func(file_path, output)
                 
                 self.log(f"   ✅ → {result.name}\n")
                 success += 1
+                last_file = result  # Lưu file cuối
             except Exception as e:
                 self.log(f"   ❌ LỖI: {str(e)}\n")
                 logger.error(f"Lỗi chuyển đổi {file_path}: {e}", exc_info=True)
@@ -311,6 +318,11 @@ class ConverterUI:
         self.log("=" * 60)
         self.log(f"🎉 KẾT QUẢ: ✅ {success} | ❌ {error}")
         self.log("=" * 60 + "\n")
+        
+        # auto_open_output = true: Tự động mở file PDF cuối cùng
+        if last_file and success > 0:
+            self.log(f"📂 Đang mở file: {last_file.name}")
+            FileHandler.open_file(last_file)
         
         messagebox.showinfo(
             "Hoàn tất",
